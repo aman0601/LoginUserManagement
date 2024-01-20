@@ -30,7 +30,7 @@ import com.login.Repository.RoleRepository;
 import com.login.Repository.UserRepository;
 import com.login.Service.impl.UserDetailsImpl;
 
-import jakarta.validation.Valid;
+import javax.validation.Valid;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
