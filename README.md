@@ -24,7 +24,7 @@ This project demonstrates a basic setup for user roles and access control using 
          "username": "admin",
          "password": "adminpassword",
          "email" : "admin@login.com",
-         "roles": ["ROLE_ADMIN"]
+         "role": ["ROLE_ADMIN"]
        }
        ```
        **Response:**
@@ -41,7 +41,7 @@ This project demonstrates a basic setup for user roles and access control using 
          "username": "moderator",
          "password": "moderatorpassword",
          "email" : "moderator@login.com",
-         "roles": ["ROLE_MODERATOR", "ROLE_USER"]
+         "role": ["ROLE_MODERATOR", "ROLE_USER"]
        }
        ```
        **Response:**
@@ -58,7 +58,7 @@ This project demonstrates a basic setup for user roles and access control using 
          "username": "user",
          "password": "userpassword",
          "email" : "user@login.com",
-         "roles": ["ROLE_USER"]
+         "role": ["ROLE_USER"]
        }
        ```
        **Response:**
