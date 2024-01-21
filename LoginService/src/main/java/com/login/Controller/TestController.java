@@ -1,10 +1,13 @@
 package com.login.Controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.login.Model.Response.MessageResponse;
 
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
@@ -12,24 +15,24 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
 	@GetMapping("/admin")
 	@PreAuthorize("hasRole('ADMIN')")
-	public String adminAccess() {
-		return "Admin Board.";
+	public ResponseEntity<MessageResponse> adminAccess() {
+		return ResponseEntity.ok(new MessageResponse("Admin Content"));
 	}
 
 	@GetMapping("/all")
-	public String allAccess() {
-		return "Public Content.";
+	public ResponseEntity<MessageResponse> allAccess() {
+		return ResponseEntity.ok(new MessageResponse("Public Content"));
 	}
 
 	@GetMapping("/mod")
 	@PreAuthorize("hasRole('MODERATOR')")
-	public String moderatorAccess() {
-		return "Moderator Board.";
+	public ResponseEntity<MessageResponse> moderatorAccess() {
+		return ResponseEntity.ok(new MessageResponse("Moderator Content"));
 	}
 
 	@GetMapping("/user")
 	@PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
-	public String userAccess() {
-		return "User Content.";
+	public ResponseEntity<MessageResponse> userAccess() {
+		return ResponseEntity.ok(new MessageResponse("User Content"));
 	}
 }
